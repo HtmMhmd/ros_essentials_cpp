@@ -1,4 +1,6 @@
-#include <highgui.h>
+
+#include <opencv2/highgui/highgui.hpp>
+#include <iostream>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <stdio.h>
 #include "opencv2/opencv.hpp"
@@ -14,7 +16,7 @@ int main( )
        Mat image;
  
        // LOAD image
-       image = imread("/home/riotu/catkin_ws/src/ros_essentials_cpp/src/topic03_perception/images/chess.jpg", CV_LOAD_IMAGE_COLOR);   // Read the file "image.jpg".
+       image = imread("chess.jpg", 0);   // Read the file "image.jpg".
               //This file "image.jpg" should be in the project folder.
               //Else provide full address : "D:/images/image.jpg"
  
@@ -25,7 +27,7 @@ int main( )
        }
  
        //DISPLAY image
-       namedWindow( "window", CV_WINDOW_AUTOSIZE ); // Create a window for display.
+       namedWindow( "window", 0 ); // Create a window for display.
        imshow( "window", image ); // Show our image inside it.
  
        //SAVE image
